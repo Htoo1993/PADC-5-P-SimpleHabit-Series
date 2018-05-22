@@ -4,14 +4,26 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import simplehabit.xyz.htooaungnaing.padc_5_p_simplehabit_series.R;
+import simplehabit.xyz.htooaungnaing.padc_5_p_simplehabit_series.adapters.SimpleHabitAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+
+    private SimpleHabitAdapter mSimpleHabitAdapter;
+
+    @BindView(R.id.rv_home_screen)
+    RecyclerView rvHomeScreen;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -38,9 +50,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ButterKnife.bind(this,this);
+
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        mSimpleHabitAdapter = new SimpleHabitAdapter(getApplicationContext());
+        rvHomeScreen.setAdapter(mSimpleHabitAdapter);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false);
+        rvHomeScreen.setLayoutManager(linearLayoutManager);
+
     }
 
 }
