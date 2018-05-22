@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/tv_start_here"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_here"
+        android:layout_margin="@dimen/margin_medium"
+        android:textSize="@dimen/text_regular_2x"
+        android:textColor="@color/white"
+        />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_starter"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/starter_height"
+        android:layout_below="@id/tv_start_here"
+        android:layout_margin="@dimen/margin_card_medium_2"
+        android:backgroundTint="@color/starter_bg"
+        app:cardElevation="4dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_black_24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_card_medium_2"
+                />
+
+            <TextView
+                android:id="@+id/tv_simple_habit_starter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/simple_habit_starter"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_heading_1x"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+               />
+
+            <Button
+                android:id="@+id/btn_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_day"
+                android:textAllCaps="false"
+                android:layout_below="@id/tv_simple_habit_starter"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:drawableLeft="@drawable/ic_play_arrow_black_24dp"
+                android:padding="@dimen/margin_medium"
+                />
+
+            <TextView
+                android:id="@+id/tv_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

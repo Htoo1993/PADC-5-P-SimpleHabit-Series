@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PADC-5-P-SimpleHabit-Series</string>
+    <string name="title_home">Meditate</string>
+    <string name="title_dashboard">Me</string>
+    <string name="title_notifications">More</string>
+    <string name="simple_habit_starter">Simple Habit Starter</string>
+    <string name="start_here">Start Here</string>
+    <string name="btn_day">Day 1</string>
+    <string name="time">5 mins</string>
+</resources>
