@@ -8,24 +8,52 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import simplehabit.xyz.htooaungnaing.padc_5_p_simplehabit_series.R;
+import simplehabit.xyz.htooaungnaing.padc_5_p_simplehabit_series.viewholders.EveningMeditationItemsViewHolder;
+import simplehabit.xyz.htooaungnaing.padc_5_p_simplehabit_series.viewholders.HealthyMindItemsViewHolder;
 import simplehabit.xyz.htooaungnaing.padc_5_p_simplehabit_series.viewholders.SimpleHabitViewHolder;
 
 public class SimpleHabitAdapter extends RecyclerView.Adapter {
 
-    private LayoutInflater inflater;
+    private static final int VT_STARTER = 0;
+    private static final int VT_EVENING_MEDITATIONS = 1;
+    private static final int VT_HEALTHY_MIND = 2;
+    private static final int VT_MOST_POPULAR = 3;
+    private static final int VT_ALL_TOPICS = 4;
+
+
+    private LayoutInflater mLayoutInflater;
 
     public SimpleHabitAdapter(Context context){
-        inflater = LayoutInflater.from(context);
+        mLayoutInflater = LayoutInflater.from(context);
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-//        LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.simple_habit_starter_item,parent,false);
-        SimpleHabitViewHolder viewHolder = new SimpleHabitViewHolder(view);
-        return viewHolder;
+        if (viewType == VT_STARTER) {
+            View view = mLayoutInflater.inflate(R.layout.simple_habit_starter_item,parent,false);
+            return new SimpleHabitViewHolder(view);
+        } else if (viewType == VT_EVENING_MEDITATIONS){
+            View view = mLayoutInflater.inflate(R.layout.evening_meditation_items, parent, false);
+            return new EveningMeditationItemsViewHolder(view);
+        } else if (viewType == VT_HEALTHY_MIND){
+            View view = mLayoutInflater.inflate(R.layout.healthy_mind_items, parent , false);
+            return  new HealthyMindItemsViewHolder(view);
+        }
+
+        return null;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if(position == 0){
+            return VT_STARTER;
+        }else if (position == 1){
+            return VT_EVENING_MEDITATIONS;
+        } else if (position == 2){
+            return VT_HEALTHY_MIND;
+        }
+        return VT_STARTER;
     }
 
     @Override
@@ -35,6 +63,6 @@ public class SimpleHabitAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 3;
     }
 }
