@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import simplehabit.xyz.htooaungnaing.padc_5_p_simplehabit_series.R;
+import simplehabit.xyz.htooaungnaing.padc_5_p_simplehabit_series.viewholders.AllTopicsItemViewHolder;
 import simplehabit.xyz.htooaungnaing.padc_5_p_simplehabit_series.viewholders.EveningMeditationItemsViewHolder;
 import simplehabit.xyz.htooaungnaing.padc_5_p_simplehabit_series.viewholders.HealthyMindItemsViewHolder;
 import simplehabit.xyz.htooaungnaing.padc_5_p_simplehabit_series.viewholders.SimpleHabitViewHolder;
@@ -17,8 +18,7 @@ public class SimpleHabitAdapter extends RecyclerView.Adapter {
     private static final int VT_STARTER = 0;
     private static final int VT_EVENING_MEDITATIONS = 1;
     private static final int VT_HEALTHY_MIND = 2;
-    private static final int VT_MOST_POPULAR = 3;
-    private static final int VT_ALL_TOPICS = 4;
+    private static final int VT_ALL_TOPICS = 3;
 
 
     private LayoutInflater mLayoutInflater;
@@ -39,6 +39,9 @@ public class SimpleHabitAdapter extends RecyclerView.Adapter {
         } else if (viewType == VT_HEALTHY_MIND){
             View view = mLayoutInflater.inflate(R.layout.healthy_mind_items, parent , false);
             return  new HealthyMindItemsViewHolder(view);
+        } else if (viewType == VT_ALL_TOPICS){
+            View view = mLayoutInflater.inflate(R.layout.all_topics_items, parent, false);
+            return new AllTopicsItemViewHolder(view);
         }
 
         return null;
@@ -52,6 +55,8 @@ public class SimpleHabitAdapter extends RecyclerView.Adapter {
             return VT_EVENING_MEDITATIONS;
         } else if (position == 2){
             return VT_HEALTHY_MIND;
+        } else if (position == 3){
+            return VT_ALL_TOPICS;
         }
         return VT_STARTER;
     }
@@ -63,6 +68,6 @@ public class SimpleHabitAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 4;
     }
 }

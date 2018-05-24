@@ -9,4 +9,7 @@
     <string name="time">5 mins</string>
     <string name="healthy_mind">A Healthy Mind</string>
     <string name="evening_meditation">Evening Meditations</string>
+    <string name="all_topics">All Topics</string>
+    <string name="all_topics_title">Basics</string>
+    <string name="all_topics_description">Learn Meditation Fundamentals</string>
 </resources>

@@ -7,4 +7,6 @@
     <color name="white">#FFFFFF</color>
     <color name="app_bg">#24263b</color>
     <color name="starter_bg">#94cbd7</color>
+    <color name="all_topic_bg">#dbe9ec</color>
+
 </resources>
